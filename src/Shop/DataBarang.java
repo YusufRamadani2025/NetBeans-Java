@@ -100,7 +100,7 @@ public class DataBarang extends javax.swing.JFrame {
         try {
             Connection c = koneksi.getKoneksi();
             String sql = "Select * from barang where ID_Barang like '%" + jTextField1.getText() + "%'" +
-                    "or Nama_Barang like '%" + jTextField1.getText() + "%'";
+                    "or Nama_Barang like '%" + jTextField1.getText() + "%'" ;
             Statement stat = c.createStatement();
             ResultSet rs = stat.executeQuery(sql);
             while (rs.next()) {                
@@ -191,6 +191,7 @@ public class DataBarang extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("DATA BARANG");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -254,6 +255,12 @@ public class DataBarang extends javax.swing.JFrame {
         jLabel7.setText("Harga Jual");
 
         jLabel8.setText("Stok");
+
+        txStok.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txStokActionPerformed(evt);
+            }
+        });
 
         cbJenis.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Makanan", "Minuman", "Permen", "Obat" }));
         cbJenis.addActionListener(new java.awt.event.ActionListener() {
@@ -325,6 +332,7 @@ public class DataBarang extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        btnSimpan.setBackground(new java.awt.Color(0, 255, 204));
         btnSimpan.setText("Simpan");
         btnSimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -332,6 +340,7 @@ public class DataBarang extends javax.swing.JFrame {
             }
         });
 
+        btnEdit.setBackground(new java.awt.Color(0, 255, 204));
         btnEdit.setText("Edit");
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -339,6 +348,7 @@ public class DataBarang extends javax.swing.JFrame {
             }
         });
 
+        btnHapus.setBackground(new java.awt.Color(0, 255, 204));
         btnHapus.setText("Hapus");
         btnHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -346,6 +356,7 @@ public class DataBarang extends javax.swing.JFrame {
             }
         });
 
+        btnBatal.setBackground(new java.awt.Color(0, 255, 204));
         btnBatal.setText("Batal");
         btnBatal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -382,6 +393,7 @@ public class DataBarang extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(0, 204, 204));
 
+        jButton1.setBackground(new java.awt.Color(0, 255, 204));
         jButton1.setText("Keluar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -650,6 +662,10 @@ public class DataBarang extends javax.swing.JFrame {
         new MenuUtama().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void txStokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txStokActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txStokActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -716,3 +732,4 @@ public class DataBarang extends javax.swing.JFrame {
     private javax.swing.JTextField txStok;
     // End of variables declaration//GEN-END:variables
 }
+
